@@ -1,24 +1,29 @@
 //
-//  ViewController.m
+//  SettingsViewController.m
 //  tictactoe
 //
 //  Created by Steffen Buder on 14.05.12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "SettingsViewController.h"
 
-@interface ViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation ViewController
+@implementation SettingsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"Settings";
+        self.tabBarItem = [[UITabBarItem alloc]
+                           initWithTitle:NSLocalizedString(@"Settings", @"SettingsTabTitle")
+                           image:[UIImage imageNamed:@"settings.png"]
+                           tag:2];
     }
     return self;
 }

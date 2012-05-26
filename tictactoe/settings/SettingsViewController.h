@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SettingsViewController.h
 //  tictactoe
 //
 //  Created by Steffen Buder on 14.05.12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITabBarController
+@interface SettingsViewController : UIViewController
 
 @end

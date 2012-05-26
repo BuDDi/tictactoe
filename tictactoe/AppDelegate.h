@@ -8,12 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
+#import "GameViewController.h"
+
+#import "SettingsViewController.h"
+
+#import "MapViewController.h"
+
+#import "ViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) ViewController* viewController;
+
+@property (strong, nonatomic) GameViewController *gameViewController;
+
+@property (strong, nonatomic) SettingsViewController* settingsViewController;
+
+@property (strong, nonatomic) MapViewController* mapViewController;
 
 @end

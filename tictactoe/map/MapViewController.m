@@ -1,24 +1,29 @@
 //
-//  ViewController.m
+//  MapViewController.m
 //  tictactoe
 //
 //  Created by Steffen Buder on 14.05.12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MapViewController.h"
 
-@interface ViewController ()
+@interface MapViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MapViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"Map";
+        self.tabBarItem = [[UITabBarItem alloc]
+                                         initWithTitle:NSLocalizedString(@"Map", @"MapTabTitle")
+                                         image:[UIImage imageNamed:@"map.png"]
+                                         tag:1];
     }
     return self;
 }

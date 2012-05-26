@@ -8,16 +8,21 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
+@synthesize gameViewController = _gameViewController;
+@synthesize settingsViewController = _settingsViewController;
+@synthesize mapViewController = _mapViewController;
 
 - (void)dealloc
 {
     [_window release];
+    [_gameViewController release];
+    [_settingsViewController release];
+    [_mapViewController release];
     [_viewController release];
     [super dealloc];
 }
@@ -26,7 +31,15 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
+    self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" 
+        bundle:nil] autorelease];
+    self.gameViewController = [[[GameViewController alloc] initWithNibName:@"GameViewController" bundle:nil] autorelease];
+    self.settingsViewController = [[[SettingsViewController alloc] initWithNibName:@"SettingsViewController" bundle:nil] autorelease];
+    self.mapViewController = [[[MapViewController alloc] initWithNibName:@"MapViewController" 
+        bundle:nil] autorelease];
+    [self.viewController addChildViewController: self.gameViewController];
+    [self.viewController addChildViewController: self.mapViewController];
+    [self.viewController addChildViewController: self.settingsViewController];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

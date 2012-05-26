@@ -7,30 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E02AC4D1560F8710042CB74 /* TicTacToeMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E02AC4C1560F8710042CB74 /* TicTacToeMatrix.m */; };
 		8E3C7AF115455FB50062D136 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3C7AF015455FB50062D136 /* UIKit.framework */; };
 		8E3C7AF315455FB50062D136 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3C7AF215455FB50062D136 /* Foundation.framework */; };
 		8E3C7AF515455FB50062D136 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E3C7AF415455FB50062D136 /* CoreGraphics.framework */; };
 		8E3C7AFB15455FB50062D136 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8E3C7AF915455FB50062D136 /* InfoPlist.strings */; };
 		8E3C7AFD15455FB50062D136 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C7AFC15455FB50062D136 /* main.m */; };
 		8E3C7B0115455FB50062D136 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C7B0015455FB50062D136 /* AppDelegate.m */; };
-		8E3C7B0415455FB50062D136 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C7B0315455FB50062D136 /* ViewController.m */; };
-		8E3C7B0715455FB50062D136 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E3C7B0515455FB50062D136 /* ViewController.xib */; };
+		8E3C7B0415455FB50062D136 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C7B0315455FB50062D136 /* GameViewController.m */; };
+		8E3C7B0715455FB50062D136 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E3C7B0515455FB50062D136 /* GameViewController.xib */; };
+		8E7FEAC21570107900A02A0E /* feld.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEAC11570107900A02A0E /* feld.png */; };
+		8E7FEAC41570116800A02A0E /* kreuz.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEAC31570116800A02A0E /* kreuz.png */; };
+		8E7FEAC6157011F900A02A0E /* kreis.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEAC5157011F900A02A0E /* kreis.png */; };
+		8E7FEAC91570178500A02A0E /* kreis_win.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEAC81570178500A02A0E /* kreis_win.png */; };
+		8E7FEACB1570179000A02A0E /* kreuz_win.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEACA1570179000A02A0E /* kreuz_win.png */; };
+		8E8C3E25156A3D3900598590 /* WinNotificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C3E24156A3D3900598590 /* WinNotificationObject.m */; };
+		8E8C3E29156A53BD00598590 /* SetFieldObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C3E28156A53BD00598590 /* SetFieldObject.m */; };
+		8EF84E6F156155850023C647 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF84E6D156155850023C647 /* MapViewController.m */; };
+		8EF84E70156155850023C647 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EF84E6E156155850023C647 /* MapViewController.xib */; };
+		8EF84E751561585F0023C647 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF84E731561585F0023C647 /* ViewController.m */; };
+		8EF84E761561585F0023C647 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EF84E741561585F0023C647 /* ViewController.xib */; };
+		8EF84E7A15615C230023C647 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF84E7815615C230023C647 /* SettingsViewController.m */; };
+		8EF84E7B15615C230023C647 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EF84E7915615C230023C647 /* SettingsViewController.xib */; };
+		8EF84E7D15615F3B0023C647 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EF84E7C15615F3B0023C647 /* map.png */; };
+		8EF84E7F156162480023C647 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EF84E7E156162480023C647 /* settings.png */; };
+		8EF84E81156163230023C647 /* game.png in Resources */ = {isa = PBXBuildFile; fileRef = 8EF84E80156163230023C647 /* game.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E02AC4B1560F8710042CB74 /* TicTacToeMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TicTacToeMatrix.h; path = model/TicTacToeMatrix.h; sourceTree = "<group>"; };
+		8E02AC4C1560F8710042CB74 /* TicTacToeMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TicTacToeMatrix.m; path = model/TicTacToeMatrix.m; sourceTree = "<group>"; };
 		8E3C7AEC15455FB50062D136 /* tictactoe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tictactoe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E3C7AF015455FB50062D136 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8E3C7AF215455FB50062D136 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		8E3C7AF415455FB50062D136 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8E3C7AF815455FB50062D136 /* tictactoe-Info.plist */ = {isa = PBXFileReference; path = "tictactoe-Info.plist"; sourceTree = "<group>"; };
+		8E3C7AF815455FB50062D136 /* tictactoe-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "tictactoe-Info.plist"; sourceTree = "<group>"; };
 		8E3C7AFA15455FB50062D136 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		8E3C7AFC15455FB50062D136 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		8E3C7AFE15455FB50062D136 /* tictactoe-Prefix.pch */ = {isa = PBXFileReference; path = "tictactoe-Prefix.pch"; sourceTree = "<group>"; };
-		8E3C7AFF15455FB50062D136 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		8E3C7AFE15455FB50062D136 /* tictactoe-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tictactoe-Prefix.pch"; sourceTree = "<group>"; };
+		8E3C7AFF15455FB50062D136 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8E3C7B0015455FB50062D136 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8E3C7B0215455FB50062D136 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
-		8E3C7B0315455FB50062D136 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		8E3C7B0615455FB50062D136 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		8E3C7B0215455FB50062D136 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
+		8E3C7B0315455FB50062D136 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
+		8E3C7B0615455FB50062D136 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GameViewController.xib; sourceTree = "<group>"; };
+		8E7FEAC11570107900A02A0E /* feld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feld.png; sourceTree = "<group>"; };
+		8E7FEAC31570116800A02A0E /* kreuz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kreuz.png; sourceTree = "<group>"; };
+		8E7FEAC5157011F900A02A0E /* kreis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kreis.png; sourceTree = "<group>"; };
+		8E7FEAC81570178500A02A0E /* kreis_win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kreis_win.png; sourceTree = "<group>"; };
+		8E7FEACA1570179000A02A0E /* kreuz_win.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kreuz_win.png; sourceTree = "<group>"; };
+		8E8C3E23156A3D3900598590 /* WinNotificationObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WinNotificationObject.h; path = model/WinNotificationObject.h; sourceTree = "<group>"; };
+		8E8C3E24156A3D3900598590 /* WinNotificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WinNotificationObject.m; path = model/WinNotificationObject.m; sourceTree = "<group>"; };
+		8E8C3E27156A53BD00598590 /* SetFieldObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetFieldObject.h; path = model/SetFieldObject.h; sourceTree = "<group>"; };
+		8E8C3E28156A53BD00598590 /* SetFieldObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetFieldObject.m; path = model/SetFieldObject.m; sourceTree = "<group>"; };
+		8EF84E6C156155850023C647 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = map/MapViewController.h; sourceTree = "<group>"; };
+		8EF84E6D156155850023C647 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = map/MapViewController.m; sourceTree = "<group>"; };
+		8EF84E6E156155850023C647 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = map/MapViewController.xib; sourceTree = "<group>"; };
+		8EF84E721561585F0023C647 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		8EF84E731561585F0023C647 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		8EF84E741561585F0023C647 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		8EF84E7715615C230023C647 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsViewController.h; path = settings/SettingsViewController.h; sourceTree = "<group>"; };
+		8EF84E7815615C230023C647 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsViewController.m; path = settings/SettingsViewController.m; sourceTree = "<group>"; };
+		8EF84E7915615C230023C647 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SettingsViewController.xib; path = settings/SettingsViewController.xib; sourceTree = "<group>"; };
+		8EF84E7C15615F3B0023C647 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		8EF84E7E156162480023C647 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
+		8EF84E80156163230023C647 /* game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = game.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +87,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E02AC491560F8280042CB74 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				8E02AC4B1560F8710042CB74 /* TicTacToeMatrix.h */,
+				8E02AC4C1560F8710042CB74 /* TicTacToeMatrix.m */,
+				8E8C3E23156A3D3900598590 /* WinNotificationObject.h */,
+				8E8C3E24156A3D3900598590 /* WinNotificationObject.m */,
+				8E8C3E27156A53BD00598590 /* SetFieldObject.h */,
+				8E8C3E28156A53BD00598590 /* SetFieldObject.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		8E02AC50156118930042CB74 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				8EF84E6C156155850023C647 /* MapViewController.h */,
+				8EF84E6D156155850023C647 /* MapViewController.m */,
+				8EF84E6E156155850023C647 /* MapViewController.xib */,
+			);
+			name = map;
+			sourceTree = "<group>";
+		};
+		8E02AC511561189D0042CB74 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				8EF84E7715615C230023C647 /* SettingsViewController.h */,
+				8EF84E7815615C230023C647 /* SettingsViewController.m */,
+				8EF84E7915615C230023C647 /* SettingsViewController.xib */,
+			);
+			name = settings;
+			sourceTree = "<group>";
+		};
 		8E3C7AE115455FB40062D136 = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +150,18 @@
 		8E3C7AF615455FB50062D136 /* tictactoe */ = {
 			isa = PBXGroup;
 			children = (
+				8E02AC511561189D0042CB74 /* settings */,
+				8E02AC50156118930042CB74 /* map */,
+				8E02AC491560F8280042CB74 /* model */,
 				8E3C7AFF15455FB50062D136 /* AppDelegate.h */,
 				8E3C7B0015455FB50062D136 /* AppDelegate.m */,
-				8E3C7B0215455FB50062D136 /* ViewController.h */,
-				8E3C7B0315455FB50062D136 /* ViewController.m */,
-				8E3C7B0515455FB50062D136 /* ViewController.xib */,
+				8E3C7B0215455FB50062D136 /* GameViewController.h */,
+				8E3C7B0315455FB50062D136 /* GameViewController.m */,
+				8E3C7B0515455FB50062D136 /* GameViewController.xib */,
 				8E3C7AF715455FB50062D136 /* Supporting Files */,
+				8EF84E721561585F0023C647 /* ViewController.h */,
+				8EF84E731561585F0023C647 /* ViewController.m */,
+				8EF84E741561585F0023C647 /* ViewController.xib */,
 			);
 			path = tictactoe;
 			sourceTree = "<group>";
@@ -90,12 +169,28 @@
 		8E3C7AF715455FB50062D136 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E7FEAC71570175900A02A0E /* images */,
 				8E3C7AF815455FB50062D136 /* tictactoe-Info.plist */,
 				8E3C7AF915455FB50062D136 /* InfoPlist.strings */,
 				8E3C7AFC15455FB50062D136 /* main.m */,
 				8E3C7AFE15455FB50062D136 /* tictactoe-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E7FEAC71570175900A02A0E /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8E7FEACA1570179000A02A0E /* kreuz_win.png */,
+				8E7FEAC81570178500A02A0E /* kreis_win.png */,
+				8E7FEAC5157011F900A02A0E /* kreis.png */,
+				8E7FEAC31570116800A02A0E /* kreuz.png */,
+				8E7FEAC11570107900A02A0E /* feld.png */,
+				8EF84E80156163230023C647 /* game.png */,
+				8EF84E7E156162480023C647 /* settings.png */,
+				8EF84E7C15615F3B0023C647 /* map.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,7 +244,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E3C7AFB15455FB50062D136 /* InfoPlist.strings in Resources */,
-				8E3C7B0715455FB50062D136 /* ViewController.xib in Resources */,
+				8E3C7B0715455FB50062D136 /* GameViewController.xib in Resources */,
+				8EF84E70156155850023C647 /* MapViewController.xib in Resources */,
+				8EF84E761561585F0023C647 /* ViewController.xib in Resources */,
+				8EF84E7B15615C230023C647 /* SettingsViewController.xib in Resources */,
+				8EF84E7D15615F3B0023C647 /* map.png in Resources */,
+				8EF84E7F156162480023C647 /* settings.png in Resources */,
+				8EF84E81156163230023C647 /* game.png in Resources */,
+				8E7FEAC21570107900A02A0E /* feld.png in Resources */,
+				8E7FEAC41570116800A02A0E /* kreuz.png in Resources */,
+				8E7FEAC6157011F900A02A0E /* kreis.png in Resources */,
+				8E7FEAC91570178500A02A0E /* kreis_win.png in Resources */,
+				8E7FEACB1570179000A02A0E /* kreuz_win.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +268,13 @@
 			files = (
 				8E3C7AFD15455FB50062D136 /* main.m in Sources */,
 				8E3C7B0115455FB50062D136 /* AppDelegate.m in Sources */,
-				8E3C7B0415455FB50062D136 /* ViewController.m in Sources */,
+				8E3C7B0415455FB50062D136 /* GameViewController.m in Sources */,
+				8E02AC4D1560F8710042CB74 /* TicTacToeMatrix.m in Sources */,
+				8EF84E6F156155850023C647 /* MapViewController.m in Sources */,
+				8EF84E751561585F0023C647 /* ViewController.m in Sources */,
+				8EF84E7A15615C230023C647 /* SettingsViewController.m in Sources */,
+				8E8C3E25156A3D3900598590 /* WinNotificationObject.m in Sources */,
+				8E8C3E29156A53BD00598590 /* SetFieldObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,12 +289,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		8E3C7B0515455FB50062D136 /* ViewController.xib */ = {
+		8E3C7B0515455FB50062D136 /* GameViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8E3C7B0615455FB50062D136 /* en */,
 			);
-			name = ViewController.xib;
+			name = GameViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -272,6 +384,7 @@
 				8E3C7B0C15455FB50062D136 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
