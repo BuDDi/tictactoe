@@ -16,6 +16,7 @@
 		8E3C7B0115455FB50062D136 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C7B0015455FB50062D136 /* AppDelegate.m */; };
 		8E3C7B0415455FB50062D136 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C7B0315455FB50062D136 /* GameViewController.m */; };
 		8E3C7B0715455FB50062D136 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E3C7B0515455FB50062D136 /* GameViewController.xib */; };
+		8E6BF524157CADB400B18F24 /* SettingsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6BF523157CADB400B18F24 /* SettingsModel.m */; };
 		8E7FEAC21570107900A02A0E /* feld.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEAC11570107900A02A0E /* feld.png */; };
 		8E7FEAC41570116800A02A0E /* kreuz.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEAC31570116800A02A0E /* kreuz.png */; };
 		8E7FEAC6157011F900A02A0E /* kreis.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEAC5157011F900A02A0E /* kreis.png */; };
@@ -50,6 +51,8 @@
 		8E3C7B0215455FB50062D136 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		8E3C7B0315455FB50062D136 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		8E3C7B0615455FB50062D136 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GameViewController.xib; sourceTree = "<group>"; };
+		8E6BF522157CADB400B18F24 /* SettingsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsModel.h; path = model/SettingsModel.h; sourceTree = "<group>"; };
+		8E6BF523157CADB400B18F24 /* SettingsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsModel.m; path = model/SettingsModel.m; sourceTree = "<group>"; };
 		8E7FEAC11570107900A02A0E /* feld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feld.png; sourceTree = "<group>"; };
 		8E7FEAC31570116800A02A0E /* kreuz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kreuz.png; sourceTree = "<group>"; };
 		8E7FEAC5157011F900A02A0E /* kreis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kreis.png; sourceTree = "<group>"; };
@@ -96,6 +99,8 @@
 				8E8C3E24156A3D3900598590 /* WinNotificationObject.m */,
 				8E8C3E27156A53BD00598590 /* SetFieldObject.h */,
 				8E8C3E28156A53BD00598590 /* SetFieldObject.m */,
+				8E6BF522157CADB400B18F24 /* SettingsModel.h */,
+				8E6BF523157CADB400B18F24 /* SettingsModel.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				8EF84E7A15615C230023C647 /* SettingsViewController.m in Sources */,
 				8E8C3E25156A3D3900598590 /* WinNotificationObject.m in Sources */,
 				8E8C3E29156A53BD00598590 /* SetFieldObject.m in Sources */,
+				8E6BF524157CADB400B18F24 /* SettingsModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

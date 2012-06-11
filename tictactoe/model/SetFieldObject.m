@@ -12,6 +12,7 @@
 
 @synthesize x = _x;
 @synthesize y = _y;
+@synthesize value = _value;
 
 -(id) initWithX: (int)x andY:(int)y
 {
@@ -19,6 +20,18 @@
     if (self) {
         self.x = x;
         self.y = y;
+        self.value = -1;
+    }
+    return self;
+}
+
+-(id) initWithX: (int)x Y:(int)y andValue:(int)value
+{
+    self = [super init];
+    if (self) {
+        self.x = x;
+        self.y = y;
+        self.value = value;
     }
     return self;
 }

@@ -21,14 +21,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *b8;
 @property (strong, nonatomic) IBOutlet UIButton *b9;
 
-@property (strong, nonatomic) UIImage* kreis;
-@property (strong, nonatomic) UIImage* kreuz;
-
 @property (strong, nonatomic) IBOutlet UILabel *label1;
-@property (strong, nonatomic) IBOutlet UISegmentedControl* playerSwitch;
 
 - (IBAction)startAction:(id)sender;
 - (IBAction)setImage:(id)sender;
-- (IBAction)setPlayer:(id)sender;
 
 @end

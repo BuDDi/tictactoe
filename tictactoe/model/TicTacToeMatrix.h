@@ -17,9 +17,9 @@ typedef enum {
 
 @interface TicTacToeMatrix : NSObject
 
-
-@property (nonatomic) int numPlayer;
-
 -(void) reset;
--(void) setValue:(field_t)value atX:(int)x andY:(int)y;
+-(void) setValueatX:(int)x andY:(int)y;
+- (void)setNumPlayer:(int)object;
+-(void)setPlayer1Starts:(BOOL)player1Starts;
+-(int) roundCounter;
 @end

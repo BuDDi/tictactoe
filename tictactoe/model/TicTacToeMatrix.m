@@ -12,10 +12,19 @@
 
 @implementation TicTacToeMatrix
 {
+    int numPlayer;
     field_t fields[3][3];
+    int roundCounter;
+    BOOL player1Starts;
 }
 
-@synthesize numPlayer = _numPlayer;
+- (id) init {
+    self = [super init];
+    if(self != nil){
+        // hier beim NotificationCenter anmelden
+    }
+    return self;
+}
 
 - (void) reset {
     for (int y=0; y<3; y++) {
@@ -23,15 +32,33 @@
             fields[y][x] = nobody;
         }
     }
+    roundCounter = 0;
+    if(!player1Starts && numPlayer == 1){
+        [self setValueAuto];
+        [self checkState];
+    }
 }
 
--(void) setValue:(field_t)value atX:(int)x andY:(int)y
+-(void) setValueatX:(int)x andY:(int)y
 {
-    NSLog(@"x:%d, y:%d, val:%d", x, y, value);
+    field_t value;
+    if (numPlayer == 1) {
+        value= player1;
+    }else {
+        if (roundCounter % 2 == 0 && player1Starts) {
+            value = player1;
+        }else if (roundCounter % 2 == 1 && !player1Starts) {
+            value = player1;
+        }else {
+            value = player2;
+        }
+    }
     
     fields[y][x] = value;
+    [self notifySetManField:[[SetFieldObject alloc] initWithX:x Y:y andValue:value]];
+    roundCounter++;
     BOOL gameOver = [self checkState];
-    if(self.numPlayer == 1 && !gameOver){
+    if(numPlayer == 1 && !gameOver){
         [self setValueAuto];
         [self checkState];
     }
@@ -54,6 +81,7 @@
     }
     fields[field.y][field.x] = machine;
     [self notifySetAutoField: field];
+    roundCounter++;
 }
 
 - (SetFieldObject*) getDefenseField
@@ -310,6 +338,22 @@
 
 - (void)notifySetAutoField: (SetFieldObject*)setFieldObj {
     [[NSNotificationCenter defaultCenter] postNotificationName:@"setfield" object:setFieldObj];
+}
+
+- (void)notifySetManField: (SetFieldObject*)setFieldObj {
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"setfield2" object:setFieldObj];
+}
+
+- (void)setNumPlayer:(int)object {
+    numPlayer = object;
+}
+
+-(void)setPlayer1Starts:(BOOL)obj{
+    player1Starts = obj;
+}
+
+-(int) roundCounter {
+    return roundCounter;
 }
 
 @end

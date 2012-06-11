@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 #import "TicTacToeMatrix.h"
+#import "SettingsModel.h"
 #import "GameViewController.h"
 #import "WinNotificationObject.h"
 #import "SetFieldObject.h"
@@ -17,7 +18,7 @@
 @implementation GameViewController
 {
     TicTacToeMatrix* model;
-    int roundCounter;
+    SettingsModel* settings;
     BOOL startedGame;
 }
 @synthesize b1 = _b1;
@@ -29,10 +30,7 @@
 @synthesize b7 = _b7;
 @synthesize b8 = _b8;
 @synthesize b9 = _b9;
-@synthesize kreis = _kreis;
-@synthesize kreuz = _kreuz;
 @synthesize label1 = _label1;
-@synthesize playerSwitch = _playerSwitch;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,6 +42,7 @@
                            initWithTitle:NSLocalizedString(@"Game", @"GameTabTitle")
                            image:[UIImage imageNamed:@"game.png"]
                            tag:0];
+        [[UIApplication sharedApplication] delegate];
     }
     return self;
 }
@@ -53,13 +52,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    roundCounter = 0;
-    self.kreis = [UIImage imageNamed:@"kreis.png"];
-    self.kreuz = [UIImage imageNamed:@"kreuz.png"];
     model = [[TicTacToeMatrix alloc] init];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finalizeGame:) name:@"winner" object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modelSetFieldAuto:) name:@"setfield" object:nil];
-    [self setNumPlayer];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(modelSetFieldMan:) name:@"setfield2" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applySettings:) name:@"applySettings" object:nil];
 }
 
 - (void)viewDidUnload
@@ -74,9 +71,6 @@
     [self setB8:nil];
     [self setB9:nil];
     [self setLabel1:nil];
-    self.kreis = nil;
-    self.kreuz = nil;
-    self.playerSwitch = nil;
     model = nil;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [super viewDidUnload];
@@ -99,9 +93,6 @@
     [self.b8 release];
     [self.b9 release];
     [self.label1 release];
-    [self.kreis release];
-    [self.kreuz release];
-    [self.playerSwitch release];
     [model release];
     [super dealloc];
 }
@@ -139,14 +130,11 @@
 }
 
 - (void) reset {
-    [model reset];
     [self clearDisplay];
     [self enableButtons];
     self.label1.text = @"";
-    roundCounter = 0;
     startedGame = true;
-    [self.playerSwitch setEnabled:NO];
-    [self setNumPlayer];
+    // TODO hier Nachricht an SettingsViewController senden, dass Spiel gestartet wurde
 }
 
 -(void) enableButtons
@@ -164,27 +152,22 @@
 
 - (IBAction)startAction:(id)sender {
     [self reset];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"startGame" object:nil];
+    [model reset];
 }
 
 - (IBAction)setImage:(id)sender {
     if (startedGame) {
         int tag = [sender tag];
-        field_t val = roundCounter % 2 == 0 ? player1 : player2;
-        UIImage* image = roundCounter % 2 == 0 ? self.kreis : self.kreuz;
         
-        [sender setImage:image forState:UIControlStateNormal];
-        [sender setImage:image forState:UIControlStateHighlighted];
-        [sender setEnabled:NO];
-        [model setValue:val atX:tag%3 andY:tag/3];
-        roundCounter++;
+        [model setValueatX:tag%3 andY:tag/3];
     }
 }
 
 - (void) finalizeGame:(NSNotification*) note{
     //NSLog(@"Got notified: %@", note);
     //NSLog(@"Got notified2: %@ %@", note.object, [note.object respondsToSelector:@selector(winner)]);
-    startedGame = false;
-    [self.playerSwitch setEnabled:YES];
+    startedGame = false;    
     
     if ([note object]) {
         WinNotificationObject* winObj = note.object;
@@ -205,18 +188,8 @@
     }else {
         self.label1.text = @"Game over, no Winner";
     }
-    
-}
-
-- (IBAction)setPlayer:(id)sender
-{
-    [self setNumPlayer];  
-}
-
-- (void) setNumPlayer
-{
-    int selectedIndex = self.playerSwitch.selectedSegmentIndex;
-    [model setNumPlayer:selectedIndex + 1];
+    // TODO hier Nachricht an SettingsViewController senden, dass Spiel beendet wurde
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"endGame" object:nil];
 }
 
 - (void) paintButtonsAtHorLine:(int) y withImage:(UIImage*) image{
@@ -243,13 +216,34 @@
     //NSLog(@"SetFieldAuto x:%d y:%d", fieldObj.x, fieldObj.y);
     int buttonIndex = (fieldObj.y * 3) + fieldObj.x;
     UIButton* button = [self getButton:buttonIndex];
-    [button setImage:self.kreuz forState:UIControlStateNormal];
-    [button setImage:self.kreuz forState:UIControlStateHighlighted];
+    [button setImage:settings.player2Image forState:UIControlStateNormal];
+    [button setImage:settings.player2Image forState:UIControlStateHighlighted];
     [button setEnabled:NO];
-    roundCounter++;
     // not needed any longer
     [fieldObj release];
 }
+
+- (void) modelSetFieldMan:(NSNotification*) note
+{
+    SetFieldObject* fieldObj = [note object];
+    //NSLog(@"SetFieldAuto x:%d y:%d", fieldObj.x, fieldObj.y);
+    int buttonIndex = (fieldObj.y * 3) + fieldObj.x;
+    UIButton* button = [self getButton:buttonIndex];
+    UIImage* image = [self getImageForPlayer: fieldObj.value];
+    [button setImage:image forState:UIControlStateNormal];
+    [button setImage:image forState:UIControlStateHighlighted];
+    [button setEnabled:NO];
+    // not needed any longer
+    [fieldObj release];
+}
+
+- (void) applySettings:(NSNotification*) note
+{
+    settings = [note object];
+    [model setNumPlayer:[settings numPlayer]];
+    [model setPlayer1Starts:[settings amIStarting]];
+}
+
 - (void) paintButtonsAtDiagLine:(int) x withImage:(UIImage*) image
 {
     if(x==0){
@@ -299,10 +293,23 @@
 {
     switch (winner) {
         case player1:
-            return [UIImage imageNamed:@"kreis_win.png"];
+            return [settings player1WinImage];
         case player2:
         case machine:
-            return [UIImage imageNamed:@"kreuz_win.png"];
+            return [settings player2WinImage];
+        default:
+            return nil;
+    }
+}
+
+-(UIImage*) getImageForPlayer:(field_t) player
+{
+    switch (player) {
+        case player1:
+            return [settings player1Image];
+        case player2:
+        case machine:
+            return [settings player2Image];
         default:
             return nil;
     }

@@ -12,7 +12,10 @@
 
 @property (nonatomic) int x;
 @property (nonatomic) int y;
+@property (nonatomic) int value;
+
 
 -(id) initWithX: (int)x andY:(int)y;
+-(id) initWithX: (int)x Y:(int)y andValue:(int)value;
 
 @end
