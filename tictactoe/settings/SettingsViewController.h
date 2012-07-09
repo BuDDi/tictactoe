@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SettingsModel.h"
 
 @interface SettingsViewController : UIViewController
 
@@ -21,6 +22,8 @@
 @property (retain, nonatomic) IBOutlet UITextField *gameServerField;
 
 @property (retain, nonatomic) IBOutlet UITextField *nicknameField;
+
+@property (nonatomic, retain) SettingsModel* model;
 
 - (IBAction)setGameMode:(UISegmentedControl *)sender;
 

@@ -17,6 +17,8 @@
 		8E3C7B0415455FB50062D136 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3C7B0315455FB50062D136 /* GameViewController.m */; };
 		8E3C7B0715455FB50062D136 /* GameViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E3C7B0515455FB50062D136 /* GameViewController.xib */; };
 		8E6BF524157CADB400B18F24 /* SettingsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E6BF523157CADB400B18F24 /* SettingsModel.m */; };
+		8E70ED2815A1982100D0A4D5 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E70ED2715A1982100D0A4D5 /* login.json */; };
+		8E70ED2C15A198B100D0A4D5 /* GameServerProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E70ED2B15A198B100D0A4D5 /* GameServerProxy.m */; };
 		8E7FEAC21570107900A02A0E /* feld.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEAC11570107900A02A0E /* feld.png */; };
 		8E7FEAC41570116800A02A0E /* kreuz.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEAC31570116800A02A0E /* kreuz.png */; };
 		8E7FEAC6157011F900A02A0E /* kreis.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEAC5157011F900A02A0E /* kreis.png */; };
@@ -24,6 +26,9 @@
 		8E7FEACB1570179000A02A0E /* kreuz_win.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E7FEACA1570179000A02A0E /* kreuz_win.png */; };
 		8E8C3E25156A3D3900598590 /* WinNotificationObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C3E24156A3D3900598590 /* WinNotificationObject.m */; };
 		8E8C3E29156A53BD00598590 /* SetFieldObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E8C3E28156A53BD00598590 /* SetFieldObject.m */; };
+		8EF04A9B158F1FE000EB91B4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF04A9A158F1FE000EB91B4 /* MapKit.framework */; };
+		8EF04A9E158F200C00EB91B4 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF04A9D158F200B00EB91B4 /* Player.m */; };
+		8EF04AA0158F2A2D00EB91B4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EF04A9F158F2A2D00EB91B4 /* CoreLocation.framework */; };
 		8EF84E6F156155850023C647 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF84E6D156155850023C647 /* MapViewController.m */; };
 		8EF84E70156155850023C647 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EF84E6E156155850023C647 /* MapViewController.xib */; };
 		8EF84E751561585F0023C647 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EF84E731561585F0023C647 /* ViewController.m */; };
@@ -53,6 +58,10 @@
 		8E3C7B0615455FB50062D136 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GameViewController.xib; sourceTree = "<group>"; };
 		8E6BF522157CADB400B18F24 /* SettingsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsModel.h; path = model/SettingsModel.h; sourceTree = "<group>"; };
 		8E6BF523157CADB400B18F24 /* SettingsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsModel.m; path = model/SettingsModel.m; sourceTree = "<group>"; };
+		8E70ED2715A1982100D0A4D5 /* login.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
+		8E70ED2A15A198B100D0A4D5 /* GameServerProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameServerProxy.h; sourceTree = "<group>"; };
+		8E70ED2B15A198B100D0A4D5 /* GameServerProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameServerProxy.m; sourceTree = "<group>"; };
+		8E70ED3115A1B4BF00D0A4D5 /* GameServerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameServerDelegate.h; sourceTree = "<group>"; };
 		8E7FEAC11570107900A02A0E /* feld.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feld.png; sourceTree = "<group>"; };
 		8E7FEAC31570116800A02A0E /* kreuz.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kreuz.png; sourceTree = "<group>"; };
 		8E7FEAC5157011F900A02A0E /* kreis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kreis.png; sourceTree = "<group>"; };
@@ -62,6 +71,10 @@
 		8E8C3E24156A3D3900598590 /* WinNotificationObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WinNotificationObject.m; path = model/WinNotificationObject.m; sourceTree = "<group>"; };
 		8E8C3E27156A53BD00598590 /* SetFieldObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetFieldObject.h; path = model/SetFieldObject.h; sourceTree = "<group>"; };
 		8E8C3E28156A53BD00598590 /* SetFieldObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetFieldObject.m; path = model/SetFieldObject.m; sourceTree = "<group>"; };
+		8EF04A9A158F1FE000EB91B4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8EF04A9C158F200B00EB91B4 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		8EF04A9D158F200B00EB91B4 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		8EF04A9F158F2A2D00EB91B4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8EF84E6C156155850023C647 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = map/MapViewController.h; sourceTree = "<group>"; };
 		8EF84E6D156155850023C647 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = map/MapViewController.m; sourceTree = "<group>"; };
 		8EF84E6E156155850023C647 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MapViewController.xib; path = map/MapViewController.xib; sourceTree = "<group>"; };
@@ -81,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EF04AA0158F2A2D00EB91B4 /* CoreLocation.framework in Frameworks */,
+				8EF04A9B158F1FE000EB91B4 /* MapKit.framework in Frameworks */,
 				8E3C7AF115455FB50062D136 /* UIKit.framework in Frameworks */,
 				8E3C7AF315455FB50062D136 /* Foundation.framework in Frameworks */,
 				8E3C7AF515455FB50062D136 /* CoreGraphics.framework in Frameworks */,
@@ -101,6 +116,8 @@
 				8E8C3E28156A53BD00598590 /* SetFieldObject.m */,
 				8E6BF522157CADB400B18F24 /* SettingsModel.h */,
 				8E6BF523157CADB400B18F24 /* SettingsModel.m */,
+				8EF04A9C158F200B00EB91B4 /* Player.h */,
+				8EF04A9D158F200B00EB91B4 /* Player.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -111,6 +128,7 @@
 				8EF84E6C156155850023C647 /* MapViewController.h */,
 				8EF84E6D156155850023C647 /* MapViewController.m */,
 				8EF84E6E156155850023C647 /* MapViewController.xib */,
+				8E70ED3115A1B4BF00D0A4D5 /* GameServerDelegate.h */,
 			);
 			name = map;
 			sourceTree = "<group>";
@@ -145,6 +163,8 @@
 		8E3C7AEF15455FB50062D136 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8EF04A9F158F2A2D00EB91B4 /* CoreLocation.framework */,
+				8EF04A9A158F1FE000EB91B4 /* MapKit.framework */,
 				8E3C7AF015455FB50062D136 /* UIKit.framework */,
 				8E3C7AF215455FB50062D136 /* Foundation.framework */,
 				8E3C7AF415455FB50062D136 /* CoreGraphics.framework */,
@@ -155,6 +175,7 @@
 		8E3C7AF615455FB50062D136 /* tictactoe */ = {
 			isa = PBXGroup;
 			children = (
+				8E70ED2915A1988B00D0A4D5 /* server */,
 				8E02AC511561189D0042CB74 /* settings */,
 				8E02AC50156118930042CB74 /* map */,
 				8E02AC491560F8280042CB74 /* model */,
@@ -174,6 +195,8 @@
 		8E3C7AF715455FB50062D136 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E70ED2515A1980100D0A4D5 /* serverMessages */,
+				8EF84E80156163230023C647 /* game.png */,
 				8E7FEAC71570175900A02A0E /* images */,
 				8E3C7AF815455FB50062D136 /* tictactoe-Info.plist */,
 				8E3C7AF915455FB50062D136 /* InfoPlist.strings */,
@@ -181,6 +204,23 @@
 				8E3C7AFE15455FB50062D136 /* tictactoe-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8E70ED2515A1980100D0A4D5 /* serverMessages */ = {
+			isa = PBXGroup;
+			children = (
+				8E70ED2715A1982100D0A4D5 /* login.json */,
+			);
+			name = serverMessages;
+			sourceTree = "<group>";
+		};
+		8E70ED2915A1988B00D0A4D5 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				8E70ED2A15A198B100D0A4D5 /* GameServerProxy.h */,
+				8E70ED2B15A198B100D0A4D5 /* GameServerProxy.m */,
+			);
+			name = server;
 			sourceTree = "<group>";
 		};
 		8E7FEAC71570175900A02A0E /* images */ = {
@@ -191,7 +231,6 @@
 				8E7FEAC5157011F900A02A0E /* kreis.png */,
 				8E7FEAC31570116800A02A0E /* kreuz.png */,
 				8E7FEAC11570107900A02A0E /* feld.png */,
-				8EF84E80156163230023C647 /* game.png */,
 				8EF84E7E156162480023C647 /* settings.png */,
 				8EF84E7C15615F3B0023C647 /* map.png */,
 			);
@@ -261,6 +300,7 @@
 				8E7FEAC6157011F900A02A0E /* kreis.png in Resources */,
 				8E7FEAC91570178500A02A0E /* kreis_win.png in Resources */,
 				8E7FEACB1570179000A02A0E /* kreuz_win.png in Resources */,
+				8E70ED2815A1982100D0A4D5 /* login.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +321,8 @@
 				8E8C3E25156A3D3900598590 /* WinNotificationObject.m in Sources */,
 				8E8C3E29156A53BD00598590 /* SetFieldObject.m in Sources */,
 				8E6BF524157CADB400B18F24 /* SettingsModel.m in Sources */,
+				8EF04A9E158F200C00EB91B4 /* Player.m in Sources */,
+				8E70ED2C15A198B100D0A4D5 /* GameServerProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

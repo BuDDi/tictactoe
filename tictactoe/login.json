@@ -1,0 +1,5 @@
+{
+msg: 'login',
+name: <nickname>
+status: <BUSY/AVAIL>   
+}

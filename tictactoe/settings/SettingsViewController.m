@@ -5,7 +5,6 @@
 //  Created by Steffen Buder on 14.05.12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
-#import "SettingsModel.h"
 #import "SettingsViewController.h"
 #import "WinNotificationObject.h"
 
@@ -16,7 +15,6 @@
 @implementation SettingsViewController
 {
     bool gameStarted;
-    SettingsModel* model;
 }
 @synthesize gameModeSwitch = _gameModeSwitch;
 @synthesize crossSelectButton = _crossSelectButton;
@@ -24,6 +22,7 @@
 @synthesize startingPlayerSwitch = _startingPlayerSwitch;
 @synthesize gameServerField = _gameServerField;
 @synthesize nicknameField = _nicknameField;
+@synthesize model = _model;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,7 +35,7 @@
                            image:[UIImage imageNamed:@"settings.png"]
                            tag:2];
         
-        model = [[SettingsModel alloc] init];
+        _model = [[SettingsModel alloc] init];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameStarted:) name:@"startGame" object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(gameEnded:) name:@"endGame" object:nil];
     }
@@ -65,7 +64,7 @@
     [self setCrossSelectButton:nil];
     [self setCircleSelectButton:nil];
     [self setGameModeSwitch:nil];
-    model = nil;
+    [self setModel: nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self setGameServerField:nil];
     [self setNicknameField:nil];
@@ -84,7 +83,7 @@
     [_crossSelectButton release];
     [_circleSelectButton release];
     [_gameModeSwitch release];
-    [model release];
+    [_model release];
     [_gameServerField release];
     [_nicknameField release];
     [super dealloc];
@@ -98,48 +97,48 @@
         [_startingPlayerSwitch setTitle:@"User" forSegmentAtIndex:0];
         [_startingPlayerSwitch setTitle:@"CPU" forSegmentAtIndex:1];
     }
-    [model setNumPlayer: [sender selectedSegmentIndex] + 1];
+    [_model setNumPlayer: [sender selectedSegmentIndex] + 1];
 }
 
 - (IBAction)setMyImage:(UIButton *)sender {
     if (sender.tag == 0) {
-        [model setPlayer1Image: [UIImage imageNamed:@"kreuz.png"]];
-        [model setPlayer1WinImage:[UIImage imageNamed:@"kreuz_win.png"]];
-        [model setPlayer2Image:[UIImage imageNamed:@"kreis.png"]];
-        [model setPlayer2WinImage:[UIImage imageNamed:@"kreis_win.png"]];
-        [sender setImage: [model player1WinImage]  forState:UIControlStateNormal];
-        [sender setImage: [model player1WinImage]  forState:UIControlStateHighlighted];
-        [_circleSelectButton setImage:[model player2Image] forState:UIControlStateNormal];
-        [_circleSelectButton setImage:[model player2Image] forState:UIControlStateHighlighted];
+        [self.model setPlayer1Image: [UIImage imageNamed:@"kreuz.png"]];
+        [self.model setPlayer1WinImage:[UIImage imageNamed:@"kreuz_win.png"]];
+        [self.model setPlayer2Image:[UIImage imageNamed:@"kreis.png"]];
+        [self.model setPlayer2WinImage:[UIImage imageNamed:@"kreis_win.png"]];
+        [sender setImage: [self.model player1WinImage]  forState:UIControlStateNormal];
+        [sender setImage: [self.model player1WinImage]  forState:UIControlStateHighlighted];
+        [_circleSelectButton setImage:[self.model player2Image] forState:UIControlStateNormal];
+        [_circleSelectButton setImage:[self.model player2Image] forState:UIControlStateHighlighted];
     }else{
-        [model setPlayer1Image: [UIImage imageNamed:@"kreis.png"]];
-        [model setPlayer1WinImage:[UIImage imageNamed:@"kreis_win.png"]];
-        [model setPlayer2Image:[UIImage imageNamed:@"kreuz.png"]];
-        [model setPlayer2WinImage:[UIImage imageNamed:@"kreuz_win.png"]];
-        [sender setImage: [model player1WinImage]  forState:UIControlStateNormal];
-        [sender setImage: [model player1WinImage]  forState:UIControlStateHighlighted];
-        [_crossSelectButton setImage:[model player2Image] forState:UIControlStateNormal];
-        [_crossSelectButton setImage:[model player2Image] forState:UIControlStateHighlighted];
+        [self.model setPlayer1Image: [UIImage imageNamed:@"kreis.png"]];
+        [self.model setPlayer1WinImage:[UIImage imageNamed:@"kreis_win.png"]];
+        [self.model setPlayer2Image:[UIImage imageNamed:@"kreuz.png"]];
+        [self.model setPlayer2WinImage:[UIImage imageNamed:@"kreuz_win.png"]];
+        [sender setImage: [self.model player1WinImage]  forState:UIControlStateNormal];
+        [sender setImage: [self.model player1WinImage]  forState:UIControlStateHighlighted];
+        [_crossSelectButton setImage:[self.model player2Image] forState:UIControlStateNormal];
+        [_crossSelectButton setImage:[self.model player2Image] forState:UIControlStateHighlighted];
     }
 }
 
 - (IBAction)setStartingPlayer:(UISegmentedControl *)sender {
-    [model setAmIStarting:[sender selectedSegmentIndex] == 0];
+    [self.model setAmIStarting:[sender selectedSegmentIndex] == 0];
 }
 
 - (IBAction)setGameServerAdress:(UITextField *)sender {
-    [model setGameServerAdress: sender.text];
+    [self.model setGameServerAdress: sender.text];
 }
 
 - (IBAction)setNickName:(UITextField *)sender {
-    [model setNickname: sender.text];
+    [self.model setNickname: sender.text];
 }
 
 - (void) gameStarted: (WinNotificationObject*) object{
     gameStarted = YES;
-    [model setNumPlayer:[_gameModeSwitch selectedSegmentIndex] + 1];
+    [self.model setNumPlayer:[_gameModeSwitch selectedSegmentIndex] + 1];
     [self disableAllInputs];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"applySettings" object:model]; 
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"applySettings" object:self.model]; 
 }
 
 - (void) gameEnded: (WinNotificationObject*) object{

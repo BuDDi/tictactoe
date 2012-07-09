@@ -36,6 +36,7 @@
         _player2WinImage = [UIImage imageNamed:@"kreis_win.png"];
         _numPlayer = 1;
         _amIStarting = YES;
+        _nickname = @"Steffen";
     }
     return self;
 }
